@@ -25,7 +25,7 @@ export default function ContactMap() {
           <div className="bg-red-600 text-white p-8 flex gap-4">
             <MapPin />
             <div>
-              <h3 className="font-black text-lg">Excellent J & C Autos</h3>
+              <h3 className="font-black text-lg">SwiftRide S & B Autos</h3>
               <p className="text-white/90">{CONTACT_INFO.address.full}</p>
             </div>
           </div>

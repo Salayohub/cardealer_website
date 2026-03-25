@@ -1,6 +1,6 @@
 // components/section/featured/FeaturedCarsSection.tsx
 import { getFeaturedProducts } from '@/lib/api/products';
-import FeaturedCarsClient from '../featured/FeaturedCarsClient';
+import FeaturedCarsClient from '@/components/featured/FeaturedCarsClient';
 import { Cars } from '@/types/interfaces';
 
 export default async function FeaturedCarsSection() {

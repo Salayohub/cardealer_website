@@ -6,8 +6,8 @@ import { Award, CheckCircle, Clock, Globe, Heart, Shield, Star, TrendingUp, User
 import { Car, Headphones, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 
 export const COMPANY_INFO = {
-  name: 'Excellent J & C Autos',
-  fullName: 'Excellent J & C Autos Parts & Engineering Ltd',
+  name: 'SwiftRide S & B Autos',
+  fullName: 'SwiftRide S & B Autos Parts & Engineering Ltd',
   tagline: "Nigeria's Most Trusted Automotive Partner",
   founded: 2012,
   location: 'Lagos, Nigeria',
@@ -20,16 +20,16 @@ export const COMPANY_INFO = {
   contact: {
     phone: '+234 123 456 7890',
     whatsapp: '+234 123 456 7890',
-    email: 'info@excellentjcautos.com',
+    email: 'info@swiftride.com',
     address: '123 Automotive Drive, Victoria Island, Lagos, Nigeria'
   },
   
   social: {
-    facebook: 'https://facebook.com/excellentjcautos',
-    instagram: 'https://instagram.com/excellentjcautos',
-    twitter: 'https://twitter.com/excellentjcautos',
-    youtube: 'https://youtube.com/@excellentjcautos',
-    linkedin: 'https://linkedin.com/company/excellentjcautos'
+    facebook: 'https://facebook.com/swiftrideautos',
+    instagram: 'https://instagram.com/swiftrideautos',
+    twitter: 'https://twitter.com/swiftrideautos',
+    youtube: 'https://youtube.com/@swiftrideautos',
+    linkedin: 'https://linkedin.com/company/swiftrideautos'
   }
 };
 
@@ -76,7 +76,7 @@ export const MILESTONES = [
   {
     year: 2012,
     title: 'Company Founded',
-    description: 'Excellent J & C Autos was established in Lagos with a vision to revolutionize car buying in Nigeria.'
+    description: 'SwiftRide S & B Autos was established in Lagos with a vision to revolutionize car buying in Nigeria.'
   },
   {
     year: 2014,
@@ -165,9 +165,9 @@ export const CONTACT_INFO = {
   },
   whatsapp: '+234 123 456 7890',
   email: {
-    general: 'info@excellentjcautos.com',
-    sales: 'sales@excellentjcautos.com',
-    support: 'support@excellentjcautos.com'
+    general: 'info@swiftride.com',
+    sales: 'sales@swiftride.com',
+    support: 'support@swiftride.com'
   },
   address: {
     street: '123 Automotive Drive',
@@ -187,11 +187,11 @@ export const CONTACT_INFO = {
     sunday: 'Sunday: Closed'
   },
   social: {
-    facebook: 'https://facebook.com/excellentjcautos',
-    instagram: 'https://instagram.com/excellentjcautos',
-    twitter: 'https://twitter.com/excellentjcautos',
-    youtube: 'https://youtube.com/@excellentjcautos',
-    linkedin: 'https://linkedin.com/company/excellentjcautos'
+    facebook: 'https://facebook.com/swiftrideautos',
+    instagram: 'https://instagram.com/swiftrideautos',
+    twitter: 'https://twitter.com/swiftrideautos',
+    youtube: 'https://youtube.com/@swiftrideautos',
+    linkedin: 'https://linkedin.com/company/swiftrideautos'
   }
 };
 

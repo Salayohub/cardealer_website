@@ -18,7 +18,7 @@ export const ALL_SERVICES: ServiceDetail[] = [
   shortTitle: 'Car Sales',
   tagline: 'Quality New & Used Vehicles',
   description: 'Premium selection of quality new and certified pre-owned vehicles from trusted brands.',
-  longDescription: `At Excellent J & C Autos, we pride ourselves on offering the finest selection of new and certified pre-owned vehicles in Nigeria. Each vehicle in our inventory undergoes rigorous inspection to ensure it meets our strict quality standards. Whether you're looking for a luxury sedan, a family SUV, or a reliable commuter car, we have the perfect vehicle for you.
+  longDescription: `At SwiftRide S & B Autos, we pride ourselves on offering the finest selection of new and certified pre-owned vehicles in Nigeria. Each vehicle in our inventory undergoes rigorous inspection to ensure it meets our strict quality standards. Whether you're looking for a luxury sedan, a family SUV, or a reliable commuter car, we have the perfect vehicle for you.
 
 Our commitment to transparency means you'll always know exactly what you're getting. We provide detailed vehicle history reports, comprehensive inspections, and honest pricing. Our experienced sales team is here to guide you through every step of the buying process, ensuring you drive away completely satisfied.`,
   icon: '🚗',
@@ -941,7 +941,7 @@ Whether you need routine maintenance parts, performance upgrades, or complex rep
     link: '/contact?service=parts'
   },
   relatedServices: ['car-sales'],
-  metaTitle: 'Auto Parts & Engineering Services - OEM Parts | Excellent J & C Autos',
+  metaTitle: 'Auto Parts & Engineering Services - OEM Parts | SwiftRide S & B Autos',
   metaDescription: 'Genuine OEM auto parts and expert engineering services. Professional installation, diagnostics, and technical support for all vehicle makes.',
   keywords: ['auto parts Nigeria', 'car parts Lagos', 'OEM parts', 'car repair', 'vehicle maintenance', 'engineering services']
 }

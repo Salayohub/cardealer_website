@@ -81,7 +81,7 @@ export default function Header() {
             <Link href="/" className="shrink-0 flex items-center group">
               <div className="relative w-80 h-20 mr-3 transition-transform duration-300 group-hover:scale-110">
                 <Image
-                  src="/assets/logo/150logo.png"
+                  src="/assets/logo/new-logo1.png"
                   fill
                   alt="Excellent J & C Autos Logo"
                   sizes="(max-width: 768px) 120px, 180px"

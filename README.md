@@ -116,10 +116,7 @@ This template is ideal for:
 
 ## Clone Template
 
-```bash
-git clone https://github.com/yourusername/car-dealer-template.git
-cd car-dealer-template
-```
+
 
 ## Install Dependencies
 

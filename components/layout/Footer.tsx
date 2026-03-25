@@ -66,7 +66,7 @@ export default function Footer() {
               </div>
               <div>
                 <div className="text-xl font-black text-white tracking-tight leading-none">
-                  Excellent J & C
+                  SwiftRide S & B
                 </div>
                 <div className="text-xs text-gray-400 font-medium tracking-wider">
                   AUTOS
@@ -94,7 +94,7 @@ export default function Footer() {
                 className="flex items-center space-x-3 text-sm text-gray-400 hover:text-red-500 transition-colors duration-200"
               >
                 <Mail className="w-4 h-4 shrink-0" />
-                <span>info@excellentjc.com</span>
+                <span>info@swiftride.com</span>
               </a>
               <div className="flex items-start space-x-3 text-sm text-gray-400">
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
@@ -233,7 +233,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
             {/* Copyright */}
             <p className="text-gray-500 text-sm text-center sm:text-left">
-              © {new Date().getFullYear()} Excellent J & C Autos. All rights reserved.
+              © {new Date().getFullYear()} SwiftRide S & B Autos. All rights reserved.
             </p>
 
             {/* Legal Links */}
