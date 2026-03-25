@@ -8,7 +8,12 @@ import ServiceBanner from "@/components/sections/ServiceBanner";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUs";
 import { products } from "@/lib/db/products";
 
+ export const dynamic = 'force-dynamic';
+  
+
 export default function Home() {
+
+ 
   return (
     <main>
       <Hero />
