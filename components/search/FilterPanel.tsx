@@ -1,9 +1,9 @@
 "use client";
 
-import { CarFilter } from "@/types/car";
+import { CarFilters } from "@/types/interfaces";
 
 interface Props {
-  onFilter: (filters: CarFilter) => void;
+  onFilter: (filters: CarFilters) => void;
 }
 
 export default function FilterPanel({ onFilter }: Props) {

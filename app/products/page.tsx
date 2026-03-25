@@ -10,14 +10,15 @@ export const metadata: Metadata = {
 };
 
 
-export default async function CarsPage({ searchParams }: PageProps) {
+export default async function CarsPage({ searchParams = {} }: PageProps) {
   const page = Number(searchParams.page) || 1;
 
   const { cars, pagination } = await getCars({
     search: searchParams.search,
     category: searchParams.category,
     page,
-    limit: 12,
+    limit: 9,
+
   });
 
   return (

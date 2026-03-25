@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import {
   Car,
@@ -20,49 +18,49 @@ const FORMS = [
     type: 'product-inquiry',
     title: 'Product Inquiry',
     description: 'Get detailed information about any vehicle in our inventory',
-    icon: <Car />,
-    color: '#dc2626',
-    gradient: 'from-red-500 to-red-600'
+    icon: Car,
+    gradient: 'from-red-500 to-red-600',
+    border: 'hover:border-red-500'
   },
   {
     type: 'import-quote',
     title: 'Import Quote',
     description: 'Request a quote for importing your desired vehicle',
-    icon: <Globe />,
-    color: '#2563eb',
-    gradient: 'from-blue-500 to-blue-600'
+    icon: Globe,
+    gradient: 'from-blue-500 to-blue-600',
+    border: 'hover:border-blue-500'
   },
   {
     type: 'car-loan',
     title: 'Car Loan',
     description: 'Apply for flexible financing to drive your dream car today',
-    icon: <DollarSign />,
-    color: '#059669',
-    gradient: 'from-green-500 to-green-600'
+    icon: DollarSign,
+    gradient: 'from-green-500 to-green-600',
+    border: 'hover:border-green-500'
   },
   {
     type: 'part-quote',
     title: 'Parts Quote',
     description: 'Get competitive quotes for genuine automotive parts',
-    icon: <Wrench />,
-    color: '#ea580c',
-    gradient: 'from-orange-500 to-orange-600'
+    icon: Wrench,
+    gradient: 'from-orange-500 to-orange-600',
+    border: 'hover:border-orange-500'
   },
   {
     type: 'pre-order',
     title: 'Pre-Order',
     description: 'Reserve and customize your next vehicle before arrival',
-    icon: <ShoppingCart />,
-    color: '#7c3aed',
-    gradient: 'from-purple-500 to-purple-600'
+    icon: ShoppingCart,
+    gradient: 'from-purple-500 to-purple-600',
+    border: 'hover:border-purple-500'
   },
   {
     type: 'car-request',
     title: 'Car Request',
     description: 'Tell us your requirements and we\'ll find the perfect match',
-    icon: <Search />,
-    color: '#0891b2',
-    gradient: 'from-cyan-500 to-cyan-600'
+    icon: Search,
+    gradient: 'from-cyan-500 to-cyan-600',
+    border: 'hover:border-cyan-500'
   }
 ];
 
@@ -72,262 +70,81 @@ const FORMS = [
 
 export default function FormsIndexPage() {
   return (
-    <>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Work+Sans:wght@400;500;600;700&display=swap');
+    <div className="relative min-h-screen bg-linear-to-br from-slate-900 to-slate-800 overflow-hidden">
 
-        .forms-page {
-          font-family: 'Work Sans', sans-serif;
-          min-height: 100vh;
-          background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-          position: relative;
-          overflow: hidden;
-        }
+      {/* Subtle Grid Background */}
+      <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-size[50px_50px]" />
 
-        .forms-page::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-image: 
-            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-          background-size: 50px 50px;
-          opacity: 0.5;
-        }
+      <div className="relative max-w-7xl mx-auto px-6 py-20">
 
-        .forms-container {
-          position: relative;
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: clamp(60px, 8vw, 100px) clamp(20px, 4vw, 60px);
-        }
-
-        .forms-header {
-          text-align: center;
-          margin-bottom: clamp(60px, 8vw, 80px);
-        }
-
-        .forms-badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          background: rgba(220, 38, 38, 0.1);
-          border: 1px solid rgba(220, 38, 38, 0.2);
-          color: #fca5a5;
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.15em;
-          text-transform: uppercase;
-          padding: 8px 20px;
-          border-radius: 999px;
-          margin-bottom: 24px;
-        }
-
-        .forms-title {
-          font-family: 'Playfair Display', serif;
-          font-size: clamp(2.5rem, 6vw, 4.5rem);
-          font-weight: 800;
-          line-height: 1.1;
-          color: #fff;
-          margin: 0 0 20px 0;
-          letter-spacing: -0.02em;
-        }
-
-        .forms-subtitle {
-          font-size: clamp(16px, 2vw, 20px);
-          line-height: 1.7;
-          color: rgba(255, 255, 255, 0.6);
-          max-width: 700px;
-          margin: 0 auto;
-        }
-
-        .forms-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 24px;
-        }
-
-        @media (min-width: 768px) {
-          .forms-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 28px;
-          }
-        }
-
-        @media (min-width: 1024px) {
-          .forms-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-          }
-        }
-
-        .form-card {
-          position: relative;
-          background: rgba(255, 255, 255, 0.03);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 20px;
-          padding: 32px;
-          text-decoration: none;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          overflow: hidden;
-          display: block;
-        }
-
-        .form-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          background: var(--card-gradient);
-          opacity: 0;
-          transition: opacity 0.4s;
-        }
-
-        .form-card:hover {
-          transform: translateY(-8px);
-          border-color: var(--card-color);
-          background: rgba(255, 255, 255, 0.06);
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .form-card:hover::before {
-          opacity: 1;
-        }
-
-        .form-icon-wrap {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 64px;
-          height: 64px;
-          background: var(--card-gradient);
-          border-radius: 16px;
-          margin-bottom: 24px;
-          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .form-card:hover .form-icon-wrap {
-          transform: scale(1.1) rotate(-5deg);
-        }
-
-        .form-icon-wrap svg {
-          width: 32px;
-          height: 32px;
-          color: #fff;
-        }
-
-        .form-card-title {
-          font-size: 24px;
-          font-weight: 700;
-          color: #fff;
-          margin: 0 0 12px 0;
-          letter-spacing: -0.01em;
-        }
-
-        .form-card-desc {
-          font-size: 15px;
-          line-height: 1.7;
-          color: rgba(255, 255, 255, 0.6);
-          margin: 0 0 24px 0;
-        }
-
-        .form-card-action {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          color: #fff;
-          font-weight: 600;
-          font-size: 14px;
-          transition: gap 0.3s;
-        }
-
-        .form-card:hover .form-card-action {
-          gap: 12px;
-        }
-
-        .form-card-action svg {
-          width: 16px;
-          height: 16px;
-        }
-
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .form-card {
-          animation: fade-in-up 0.6s ease-out backwards;
-        }
-
-        .form-card:nth-child(1) { animation-delay: 0.1s; }
-        .form-card:nth-child(2) { animation-delay: 0.2s; }
-        .form-card:nth-child(3) { animation-delay: 0.3s; }
-        .form-card:nth-child(4) { animation-delay: 0.4s; }
-        .form-card:nth-child(5) { animation-delay: 0.5s; }
-        .form-card:nth-child(6) { animation-delay: 0.6s; }
-      `}</style>
-
-      <div className="forms-page">
-        <div className="forms-container">
-          {/* Header */}
-          <div className="forms-header">
-            <div className="forms-badge">
-              Request Forms
-            </div>
-            <h1 className="forms-title">
-              How Can We Help You?
-            </h1>
-            <p className="forms-subtitle">
-              Select the appropriate form below to submit your request. 
-              Our team will respond within 24 hours.
-            </p>
+        {/* Header */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center px-6 py-2 mb-6 text-xs font-bold tracking-[0.2em] uppercase rounded-full border border-red-500/30 bg-red-500/10 text-red-300">
+            Request Forms
           </div>
 
-          {/* Forms Grid */}
-          <div className="forms-grid">
-            {FORMS.map(form => (
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
+            How Can We Help You?
+          </h1>
+
+          <p className="max-w-2xl mx-auto text-lg text-white/60 leading-relaxed">
+            Select the appropriate form below to submit your request.
+            Our team will respond within 24 hours.
+          </p>
+        </div>
+
+        {/* Forms Grid */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {FORMS.map((form, index) => {
+            const Icon = form.icon;
+
+            return (
               <Link
                 key={form.type}
                 href={`/forms/${form.type}`}
-                className="form-card"
-                style={{
-                  '--card-color': form.color,
-                  '--card-gradient': `linear-gradient(135deg, ${form.color}, ${form.color}dd)`
-                } as any}
+                className={`
+                  group relative rounded-2xl p-8
+                  bg-white/5 backdrop-blur-lg
+                  border border-white/10
+                  transition-all duration-500
+                  hover:-translate-y-2 hover:bg-white/10
+                  hover:shadow-2xl
+                  ${form.border}
+                `}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="form-icon-wrap">
-                  {form.icon}
+                {/* Top Gradient Bar */}
+                <div
+                  className={`absolute top-0 left-0 w-full h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-linear-to-r ${form.gradient}`}
+                />
+
+                {/* Icon */}
+                <div
+                  className={`inline-flex items-center justify-center w-16 h-16 mb-6 rounded-xl bg-linear-to-br ${form.gradient} transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3`}
+                >
+                  <Icon className="w-8 h-8 text-white" />
                 </div>
 
-                <h2 className="form-card-title">
+                {/* Title */}
+                <h2 className="text-2xl font-bold text-white mb-3 tracking-tight">
                   {form.title}
                 </h2>
 
-                <p className="form-card-desc">
+                {/* Description */}
+                <p className="text-white/60 leading-relaxed mb-6 text-sm">
                   {form.description}
                 </p>
 
-                <div className="form-card-action">
+                {/* Action */}
+                <div className="inline-flex items-center text-sm font-semibold text-white transition-all duration-300 group-hover:gap-3 gap-2">
                   <span>Start Request</span>
-                  <ArrowRight />
+                  <ArrowRight className="w-4 h-4" />
                 </div>
               </Link>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
-    </>
+    </div>
   );
 }

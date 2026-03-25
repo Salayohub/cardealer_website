@@ -3,20 +3,54 @@
 import { useState } from 'react';
 import { Grid3x3, List, ChevronLeft, ChevronRight } from 'lucide-react';
 import ProductCard from '@/components/cards/ProductCard';
-import { Cars, Pagination } from '@/types/interfaces';
+import { Cars, Pagination, Props } from '@/types/interfaces';
+import { useRouter, useSearchParams } from 'next/navigation';
+
+
+
 
 type ViewMode = 'grid' | 'list';
-
-interface Props {
-  initialCars: Cars[];
-  pagination: Pagination;
-}
 
 export default function CarsClient({
   initialCars,
   pagination,
 }: Props) {
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
+
+  // ✅ MOVE HOOKS HERE
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  // ✅ ALSO MOVE THIS INSIDE
+  const updatePage = (newPage: number) => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    params.set('page', String(newPage));
+
+    router.push(`/products?${params.toString()}`);
+  };
+
+
+const getPageNumbers = () => {
+  const total = pagination.totalPages;
+  const current = pagination.page;
+  const delta = 2; // how many pages around current
+
+  const range: number[] = [];
+
+  const start = Math.max(1, current - delta);
+  const end = Math.min(total, current + delta);
+
+  for (let i = start; i <= end; i++) {
+    range.push(i);
+  }
+
+  return range;
+};
+
+const pages = getPageNumbers();
+
+
 
   return (
     <section className="max-w-7xl mx-auto px-4 py-12">
@@ -76,25 +110,40 @@ export default function CarsClient({
 
           {/* Pagination */}
           {pagination.totalPages > 1 && (
-            <div className="flex justify-center mt-12 gap-2">
-              <button
-                disabled={pagination.page === 1}
-                className="px-4 py-2 border rounded"
-              >
-                <ChevronLeft />
-              </button>
+           <div className="flex justify-center mt-12 gap-2 items-center">
+  {/* Prev */}
+  <button
+    onClick={() => updatePage(pagination.page - 1)}
+    disabled={pagination.page === 1}
+    className="px-3 py-2 border rounded"
+  >
+    <ChevronLeft />
+  </button>
 
-              <span className="px-4 py-2 font-bold">
-                {pagination.page} / {pagination.totalPages}
-              </span>
+  {/* Page numbers */}
+  {pages.map(page => (
+    <button
+      key={page}
+      onClick={() => updatePage(page)}
+      className={`px-4 py-2 border rounded ${
+        page === pagination.page
+          ? 'bg-red-600 text-white'
+          : 'bg-white'
+      }`}
+    >
+      {page}
+    </button>
+  ))}
 
-              <button
-                disabled={pagination.page === pagination.totalPages}
-                className="px-4 py-2 border rounded"
-              >
-                <ChevronRight />
-              </button>
-            </div>
+  {/* Next */}
+  <button
+    onClick={() => updatePage(pagination.page + 1)}
+    disabled={pagination.page === pagination.totalPages}
+    className="px-3 py-2 border rounded"
+  >
+    <ChevronRight />
+  </button>
+</div>
           )}
         </>
       )}

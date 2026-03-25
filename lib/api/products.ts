@@ -142,7 +142,7 @@ export async function getCars(
         page: 1,
         limit: filters?.limit ?? 12,
         total: 0,
-        totalPages: 0,
+        totalPages: 1,
       },
     };
   }

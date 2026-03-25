@@ -82,7 +82,7 @@ export default function FloatingWhatsApp() {
           </span>
 
           {/* Button */}
-          <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 group-hover:from-green-600 group-hover:to-green-700">
+          <div className="w-16 h-16 bg-linear-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 group-hover:from-green-600 group-hover:to-green-700">
             <MessageCircle className="w-8 h-8 text-white" />
           </div>
 

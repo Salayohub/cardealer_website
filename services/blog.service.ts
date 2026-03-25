@@ -1,5 +1,5 @@
 import { apiFetch } from "./apiClient";
-import { BlogPost } from "@/types/blog";
+import { BlogPost } from "@/types/interfaces";
 
 export const getBlogs = () => {
   return apiFetch<BlogPost[]>("/blogs");

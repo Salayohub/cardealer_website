@@ -8,6 +8,21 @@ export interface Price {
   usd: number;
 }
 
+
+
+
+export type Pagination = {
+  page: number;
+  totalPages: number;
+  total: number;
+  limit: number;
+};
+
+export type Props = {
+  initialCars: Cars[];
+  pagination: Pagination;
+};
+
 export interface Specifications {
   engine: string;
   horsepower: string;

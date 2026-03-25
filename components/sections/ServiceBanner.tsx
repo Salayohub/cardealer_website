@@ -14,6 +14,7 @@ export default function ServiceBannerDark() {
           src="/assets/png-image/servicebannerimg.png"
           alt="Service Background"
           fill
+          sizes="100vw"
           priority
           className="object-cover"
         />
@@ -43,6 +44,7 @@ export default function ServiceBannerDark() {
                 src="/assets/png-image/maintenanceicon.png"
                 alt="Auto Service"
               fill
+              sizes="(max-width:640px) 40px, 56px"
                 className="object-contain opacity-90"
               />
             </div>
@@ -86,6 +88,7 @@ export default function ServiceBannerDark() {
                 src="/assets/png-image/spareparticon.png"
                 alt="Parts & Accessories"
                 fill
+                sizes="(max-width:640px) 40px, 56px"
                 className="object-contain opacity-90"
               />
             </div>

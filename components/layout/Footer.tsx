@@ -60,7 +60,7 @@ export default function Footer() {
             {/* Logo */}
             <Link href="/" className="flex items-center group mb-4">
               <div className="relative w-12 h-12 mr-3 transition-transform duration-300 group-hover:scale-110">
-                <div className="w-full h-full bg-gradient-to-br from-red-600 to-red-700 rounded-lg flex items-center justify-center shadow-md">
+                <div className="w-full h-full bg-linear-to-br from-red-600 to-red-700 rounded-lg flex items-center justify-center shadow-md">
                   <span className="text-white font-black text-xl">JC</span>
                 </div>
               </div>
@@ -86,18 +86,18 @@ export default function Footer() {
                 href="tel:+2341234567890" 
                 className="flex items-center space-x-3 text-sm text-gray-400 hover:text-red-500 transition-colors duration-200"
               >
-                <Phone className="w-4 h-4 flex-shrink-0" />
+                <Phone className="w-4 h-4 shrink-0" />
                 <span>+234 123 456 7890</span>
               </a>
               <a 
                 href="mailto:info@excellentjc.com" 
                 className="flex items-center space-x-3 text-sm text-gray-400 hover:text-red-500 transition-colors duration-200"
               >
-                <Mail className="w-4 h-4 flex-shrink-0" />
+                <Mail className="w-4 h-4 shrink-0" />
                 <span>info@excellentjc.com</span>
               </a>
               <div className="flex items-start space-x-3 text-sm text-gray-400">
-                <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
                 <span>123 Auto Plaza, Victoria Island, Lagos, Nigeria</span>
               </div>
             </div>

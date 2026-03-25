@@ -17,7 +17,7 @@ export default function CoreValues() {
                 className="bg-white border rounded-2xl p-8 hover:shadow-xl transition"
               >
                 <div
-                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${value.color} flex items-center justify-center mb-6`}
+                  className={`w-14 h-14 rounded-xl bg-linear-to-br ${value.color} flex items-center justify-center mb-6`}
                 >
                   <Icon className="text-white w-7 h-7" />
                 </div>

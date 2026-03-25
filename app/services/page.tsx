@@ -36,6 +36,7 @@ export default function ServicesPage() {
               style={{ animationDelay: `${index * 80}ms` }}
             >
               <ServiceCard
+                id = {service.id}
                 slug={service.slug}
                 title={service.shortTitle}
                 description={service.description}

@@ -93,8 +93,9 @@ export default function FeaturedCarsClient({ cars }: Props) {
               src={hero.images[0]}
               alt={hero.name}
               fill
-              className="object-cover transition-transform duration-700 ease-out hover:scale-105"
               sizes="(max-width:1024px) 100vw, 50vw"
+              className="object-cover transition-transform duration-700 ease-out hover:scale-105"
+             
               priority
             />
             <div className="absolute inset-0 bg-linear-to-r from-transparent via-[#141414]/50 to-[#141414]" />

@@ -1,6 +1,6 @@
 import { apiFetch } from "./apiClient";
-import { HeroContent } from "@/types/hero";
+import { HeroBanner } from "@/types/interfaces";
 
 export const getHeroContent = () => {
-  return apiFetch<HeroContent>("/hero");
+  return apiFetch<HeroBanner>("/hero");
 };
