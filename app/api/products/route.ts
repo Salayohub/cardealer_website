@@ -62,7 +62,7 @@ export async function GET(req: Request) {
 
 
     // 📄 Pagination
-    const total = results.length;
+    const total = await results.length;
     const start = (page - 1) * limit;
     const paginated = results.slice(start, start + limit);
 

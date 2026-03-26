@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { ServiceCard } from '@/components/cards/ServiceCard';
 import { ALL_SERVICES } from '@/lib/service';
-import { ServiceDetail } from '@/types/interfaces';
+// import { ServiceDetail } from '@/types/interfaces';
 import { OurServicesProps } from '@/types/interfaces';
 
 
@@ -29,18 +29,25 @@ export default function OurServices({
     return 1;
   };
 
-  const [itemsPerPage, setItemsPerPage] = useState(getItemsPerPage());
+  const [itemsPerPage, setItemsPerPage] = useState(3);(getItemsPerPage());
   const totalPages = Math.ceil(services.length / itemsPerPage);
 
   // Handle responsive resize
-  useEffect(() => {
-    const handleResize = () => {
-      setItemsPerPage(getItemsPerPage());
-      setCurrentPage(0);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+ useEffect(() => {
+  const update = () => {
+    if (window.innerWidth >= 1024) setItemsPerPage(3);
+    else if (window.innerWidth >= 768) setItemsPerPage(2);
+    else setItemsPerPage(1);
+
+    setCurrentPage(0);
+
+  }; [itemsPerPage]
+
+  update(); // VERY important → run once on mount
+  window.addEventListener('resize', update);
+
+  return () => window.removeEventListener('resize', update);
+}, []);
 
   // Get services for the current page
   const getCurrentServices = () => {

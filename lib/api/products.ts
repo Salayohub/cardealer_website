@@ -1,8 +1,9 @@
 import { Cars, CarFilters, CarListResponse } from '@/types/interfaces';
+import { getBaseUrl } from '../getBaseUrl';
 
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+// const BASE_URL =
+//   process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
 /**
  * Helper to build query string from filters
@@ -26,8 +27,8 @@ function buildQuery(filters?: CarFilters) {
  */
 export async function getAllProducts(): Promise<Cars[]> {
   try {
-    const res = await fetch(`${BASE_URL}/api/products`, {
-      cache: 'no-store',
+    const res = await fetch(`${getBaseUrl()}/api/products`, {
+     next: { revalidate: 60 },
     });
 
     if (!res.ok) throw new Error('Failed to fetch products');
@@ -45,8 +46,8 @@ export async function getAllProducts(): Promise<Cars[]> {
 export async function fetchLatestProducts(limit = 6): Promise<Cars[]> {
   try {
     const res = await fetch(
-      `/api/products?sort=latest&limit=${limit}`,
-      { cache: 'no-store' }
+      `${getBaseUrl()}/api/products?sort=latest&limit=${limit}`,
+      { next: { revalidate: 60 } }
     );
 
     if (!res.ok) return [];
@@ -65,8 +66,8 @@ export async function fetchLatestProducts(limit = 6): Promise<Cars[]> {
 export async function getProductBySlug(slug: string) {
   try {
     const res = await fetch(
-  `${BASE_URL}/api/products/${slug}`,
-  { cache: 'no-store' }
+  `${getBaseUrl()}/api/products/${slug}`,
+  { next: { revalidate: 60 } }
 );
 
 
@@ -89,8 +90,8 @@ export async function getFeaturedProducts(
 ): Promise<Cars[]> {
   try {
     const res = await fetch(
-      `${BASE_URL}/api/products?badge=true&limit=${limit}`,
-      { cache: 'no-store' }
+      `${getBaseUrl()}/api/products?badge=true&limit=${limit}`,
+      { next: { revalidate: 60 } }
     );
 
     if (!res.ok) throw new Error('Failed to fetch featured products');
@@ -115,11 +116,11 @@ export async function getCars(
   try {
     const query = buildQuery(filters);
     const url = query
-      ? `${BASE_URL}/api/products?${query}`
-      : `${BASE_URL}/api/products`;
+      ? `${getBaseUrl()}/api/products?${query}`
+      : `${getBaseUrl()}/api/products`;
 
     const res = await fetch(url, {
-      cache: 'no-store',
+      next: { revalidate: 60 },
     });
 
     

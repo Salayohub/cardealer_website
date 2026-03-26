@@ -26,7 +26,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     subtitle: 'Professional Auto Service & Maintenance You Can Trust',
     description: 'We provide expert car servicing, diagnostics, and mechanical repairs handled by qualified engineers. From routine maintenance to major fixes, we ensure your vehicle runs smoothly, safely, and efficiently at all times.',
     ctaPrimary: {
-      text: 'Book a sercevice',
+      text: 'Book a service',
       link: '/services'
     },
     ctaSecondary: {

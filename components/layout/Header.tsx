@@ -79,7 +79,8 @@ export default function Header() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="shrink-0 flex items-center group">
-              <div className="relative w-80 h-20 mr-3 transition-transform duration-300 group-hover:scale-110">
+              <div className="relative w-30 h-20 mr-3 
+              transition-transform duration-300 group-hover:scale-110">
                 <Image
                   src="/assets/logo/new-logo1.png"
                   fill

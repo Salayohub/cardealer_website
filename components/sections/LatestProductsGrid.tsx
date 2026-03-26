@@ -30,10 +30,10 @@ export default function LatestProductsGrid({ initialProducts }: { initialProduct
 
   return (
     <section className="relative bg-linear-to-b from-white via-neutral-50 to-white py-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto  lg:px-8">
 
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-14 gap-8">
+        <div className="flex flex-col px-10 lg:flex-row lg:items-end lg:justify-between mb-14 gap-8">
 
           <div className="max-w-2xl">
             {/* Badge */}
@@ -68,7 +68,7 @@ export default function LatestProductsGrid({ initialProducts }: { initialProduct
         </div>
 
         {/* Grid */}
-        <div className=" group h-full grid grid-cols-1 p-15 md:grid-cols-2 xl:grid-cols-3 gap-8 ">
+        <div className=" group h-full grid grid-cols-1 p-10 md:grid-cols-2 xl:grid-cols-3 gap-8 ">
           {loading && <LatestProductsSkeleton />}
 
           {error && !loading && (

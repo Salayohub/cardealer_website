@@ -100,22 +100,23 @@ export default function HeroSection() {
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 animate-slide-in-left animation-delay-400">
-                <Link
-                  href={slide.ctaPrimary.link}
-                  className="group inline-flex items-center justify-center space-x-2 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
-                >
-                  <span>{slide.ctaPrimary.text}</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </Link>
+              {/* CTA Buttons */}
+<div className="flex flex-row flex-wrap items-center gap-3 sm:gap-4 animate-slide-in-left animation-delay-400">
+  <Link
+    href={slide.ctaPrimary.link}
+    className="group inline-flex w-fit items-center justify-center space-x-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold text-sm sm:text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 flex-none"
+  >
+    <span>{slide.ctaPrimary.text}</span>
+    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+  </Link>
 
-                <Link
-                  href={slide.ctaSecondary.link}
-                  className="inline-flex items-center justify-center space-x-2 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-lg font-bold text-base sm:text-lg transition-all duration-300"
-                >
-                  <span>{slide.ctaSecondary.text}</span>
-                </Link>
-              </div>
+  <Link
+    href={slide.ctaSecondary.link}
+    className="inline-flex w-fit items-center justify-center space-x-2 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/30 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold text-sm sm:text-lg transition-all duration-300 flex-none"
+  >
+    <span>{slide.ctaSecondary.text}</span>
+  </Link>
+</div>
 
               {/* Features - Service Slides Only */}
               {slide.type === 'service' && (

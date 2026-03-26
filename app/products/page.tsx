@@ -17,7 +17,7 @@ export default async function CarsPage({ searchParams = {} }: PageProps) {
     search: searchParams.search,
     category: searchParams.category,
     page,
-    limit: 9,
+    limit: 12,
 
   });
 

@@ -92,7 +92,8 @@ export default function FeaturedCarsClient({ cars }: Props) {
               key={hero.id}
               src={hero.images[0]}
               alt={hero.name}
-              fill
+              width={800}
+              height={600}
               sizes="(max-width:1024px) 100vw, 50vw"
               className="object-cover transition-transform duration-700 ease-out hover:scale-105"
              
@@ -151,19 +152,26 @@ export default function FeaturedCarsClient({ cars }: Props) {
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-wrap gap-3 mt-3">
-                <Link href={`/products/${hero.slug}`} className="flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition">
-                  View Details <ArrowRight size={16}/>
-                </Link>
-                <a
-                  href={`https://wa.me/2341234567890?text=${encodeURIComponent(`Hi, I'm interested in the ${hero.name}`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition"
-                >
-                  WhatsApp Us
-                </a>
-              </div>
+              <div className="flex flex-row flex-wrap items-center gap-3 sm:gap-4">
+  <Link
+    href={`/products/${hero.slug}`}
+    className="inline-flex w-fit flex-none items-center gap-2 px-5 py-3 sm:px-6 sm:py-3 bg-red-600 hover:bg-red-700 text-white font-semibold text-sm sm:text-base rounded-lg transition"
+  >
+    View Details
+    <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+  </Link>
+
+  <a
+    href={`https://wa.me/2341234567890?text=${encodeURIComponent(
+      `Hi, I'm interested in the ${hero.name}`
+    )}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex w-fit flex-none items-center gap-2 px-5 py-3 sm:px-6 sm:py-3 bg-green-600 hover:bg-green-700 text-white font-semibold text-sm sm:text-base rounded-lg transition"
+  >
+    WhatsApp Us
+  </a>
+</div>
             </div>
 
             {/* Carousel Nav + Progress */}
@@ -199,7 +207,8 @@ export default function FeaturedCarsClient({ cars }: Props) {
               <Image
                 src={car.thumbnail || car.images[0]}
                 alt={car.name}
-                fill
+                width={280}
+                height={120}
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
